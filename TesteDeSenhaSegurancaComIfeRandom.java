@@ -32,27 +32,28 @@ public class TesteDeSenhaSegurancaComIfeRandom{
             System.out.println("deseja visualizar a senha |1=> Sim|2=> Não|?");
              visu = tc.nextInt();
 
-             System.out.println ("Faça o teste de seguranca" + p + "+" + t + ":");
-            TestePT = tc.nextInt();
-   
-            
-            if(visu == 1 &&  TestePT == r){
-               System.out.println("acesso permitido");
-               System.out.println(senha);
-            }else{
-               if (visu == 2 && TestePT != r){
-                   System.out.println("acesso negado");
-                   System.out.println("***********");
-               }
+        {
+            if (visu == 2) {
+                System.out.println("Ok, nao vou exibir a senha");
+            } else {
+                if (visu == 1) {
+                    System.out.println("Ok, faça o teste de seguranca");
+                    System.out.println("Teste de seguranca: " + p + "+" + t + ":");
+                    TestePT = tc.nextInt();
+                }
             }
 
+            {
+                if (TestePT == r) {
+                    System.out.println("acesso permitido");
+                    System.out.println(senha);
+                } else {
+                    System.out.println("acesso negado");
+                    System.out.println("***********");
+                }
+            }
+        }
+
        tc.close();
-      
-
-
     }
-
-
-
-   
 }
